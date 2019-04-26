@@ -2,8 +2,6 @@
 
 A PoseNet GUI. PoseNet implementation is based on this(https://github.com/rwightman/posenet-python)
 
-- 
-
 ## 環境
 - Mac 10.14.4
 - Python 3.7.3
