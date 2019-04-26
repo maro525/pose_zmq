@@ -20,7 +20,7 @@
 3. `deactivate`
 
 ## GUI
-![GUI](https://github.com/maro525/pose_zmq/blob/master/images/screen.png)
+![GUI](screen.png)
 
 ## ファイル説明
 - `main.py`
