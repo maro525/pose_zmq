@@ -1,4 +1,8 @@
-# Pose Detection with Zmq
+# Pose Detection with Zmq 
+
+A PoseNet GUI. PoseNet implementation is based on this(https://github.com/rwightman/posenet-python)
+
+- 
 
 ## 環境
 - Mac 10.14.4
@@ -6,39 +10,40 @@
 
 ## python packages
 - `requirments.txt`
+- GUI is made with Kivy(https://kivy.org/#home) 
 
-## インストール
+## Install
 1. clone this repository
 2. `python3 -m venv ZMQ_PAGE_ENV` (ZMQ_PAGE_ENVの部分は任意)
 3. `source ZMQ_PAGE_ENV/bin/activate`
 4. `pip install -r requirments.txt`
 
-## 実行
+## Usage
 1. `source POZE_ZMQ_ENV/bin/activate`
 2. `python main.py` (最初の実行はモデルをインストールするため、時間かかる)
-3. 終わるときは`deactivate`
+3. To deactivate this env, `deactivate`
 
 ## GUI
 ![GUI](screen.png)
 
-1. 上左
+1. Top Left
     - ZMQ settings
-    - connectボタンで再接続 
-        - プログラム実行時デフォルトで、"127.0.0.1" "3000" に接続
+    - push connect button to reconnect
+        - default ip : "127.0.0.1" port : "3000"
 
-2. 上中
+2. Top Middle
     - Camera / Video settings
     - src
-        - カメラの場合 : srcの番号を入れる. 
-        - ビデオの場合 : パスを入れる
-        - TextInputにはデフォルトで、動画ファイルのパスが入っている
+        - Camera : input src number 
+        - Video : input path
+        - defult : 
     - loadボタンで自動で切り替わる
         - デフォルトで、カメラ（ソース：0）が起動する
   
     - Showのトグルスイッチ
         - 切り替えによって、カメラ表示/非表示切り替え
 
-3. 上右
+3. Top Middle 
     - Posenet Parameter
     - Scale Factor
         - 画像をどのくらい小さくして処理するか
@@ -51,11 +56,11 @@
     - Min Part Score
         - ポーズの部位のスコアの閾値
 
-4. 左下
+4. Bottom Left
     - 処理後の画像表示
-
-5. 右下
-    - zmqで送っているjsonデータを表示
+ 
+5. Bottom Right
+    - pose data in the frame 
 
 ## ファイル説明
 - `main.py`
