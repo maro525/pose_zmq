@@ -1,9 +1,5 @@
 import tensorflow as tf
-import time
-import cv2
 import posenet
-import numpy as np
-import gc
 
 import json
 from data_send import ZMQ_SENDER

@@ -4,4 +4,4 @@ _models/
 .vscode/
 POSE_ZMQ_ENV/
 .python-version
-
+.idea/

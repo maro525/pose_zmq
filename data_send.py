@@ -15,8 +15,9 @@ class ZMQ_SENDER():
             self.close()
         self.context = zmq.Context()
         socket = self.context.socket(zmq.PUB)
-        socket.connect("tcp://" + ip + ":" + str(port))
-        print("zmq connected to", ip, port)
+        addr = "tcp://" + ip + ":" + str(port)
+        socket.bind(addr)
+        print("zmq connected to", addr)
 
     def send(self, d):
         global socket
