@@ -9,7 +9,7 @@ import json
 from data_send import ZMQ_SENDER
 
 IP = "127.0.0.1"
-PORT = 5775
+PORT = 3000
 
 CAM_SRC = 0
 
