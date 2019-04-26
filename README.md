@@ -10,7 +10,7 @@
 ## インストール
 1. clone this repository
 2. `python3 -m venv ZMQ_PAGE_ENV` (ZMQ_PAGE_ENVの部分は任意)
-3. `source activate ZMQ_PAGE_ENV/bin/activate`
+3. `source ZMQ_PAGE_ENV/bin/activate`
 4. `pip install -r requirments.txt`
 
 ## 実行
