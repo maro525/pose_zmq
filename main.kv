@@ -1,0 +1,112 @@
+<Editor>:
+    BoxLayout
+        BoxLayout:
+            size_hint_x : 1
+            orientation: 'vertical'
+            Label
+                text: "ZMQ"
+            BoxLayout:
+                size_hint_y: 0.1
+                Label:
+                    text: 'ip'
+                TextInput:
+                    id: zmq_ip
+                    text: "127.0.0.1"
+            BoxLayout:
+                size_hint_y: 0.1
+                Label:
+                    text: 'port'
+                TextInput:
+                    id: zmq_port
+                    text: '5665'
+            Button:
+                size_hint_y: 0.15
+                text: 'connect'
+                on_press: root.connect_zmq(zmq_ip, zmq_port)
+                    
+        BoxLayout:
+            size_hint_x : 1
+            orientation: 'vertical'
+            Label:
+                text: "CAM / VID"
+            BoxLayout:
+                size_hint_y: 0.1
+                Label:
+                    text: 'src'
+                TextInput:
+                    id: cam_src
+                    text: './video/fan.mp4'
+            BoxLayout:
+                size_hint_y: 0.1
+                Label:
+                    text: 'show'
+                CheckBox:
+                    id: cam_show
+                    active: True
+                    on_state: root.toggle_cam_show(cam_show)
+            Button:
+                size_hint_y: 0.15
+                text : 'load'
+                on_press: root.cam_load(cam_src)
+
+        BoxLayout:
+            size_hint_x : 2
+            orientation: 'vertical'
+            Label:
+                text: 'Detector Param'
+            BoxLayout:
+                Label:
+                    text: 'Scale Factor'
+                Slider:
+                    id: scaleFactorSlider
+                    min: 0.1
+                    max: 1.0
+                    value: 0.1
+                    on_touch_up: root.change_scale(scaleFactorSlider)
+                Label:
+                    id: scaleFactorLabel
+                    text: '{:.2f}'.format(scaleFactorSlider.value)
+            BoxLayout:
+                Label:
+                    text: 'Max Pose Num'
+                Slider:
+                    id: maxPoseSlider
+                    min: 1.0
+                    max: 10.0
+                    value: 5
+                    on_touch_up: root.change_pose_num(maxPoseSlider)
+                Label:
+                    id: scaleFactorLabel
+                    text: '{:.0f}'.format(maxPoseSlider.value)
+            BoxLayout:
+                Label:
+                    text: 'Min Pose Score'
+                Slider:
+                    id: minPoseScoreSlider
+                    min: 0.1
+                    max: 1.0
+                    value: 0.25
+                    on_touch_up: root.change_min_pose_score(minPoseScoreSlider)
+                Label:
+                    id: scaleFactorLabel
+                    text: '{:.2f}'.format(minPoseScoreSlider.value)
+            BoxLayout:
+                Label:
+                    text: 'Min Part Score'
+                Slider:
+                    id: minPartScoreSlider
+                    min: 0.1
+                    max: 1.0
+                    value: 0.10
+                    on_touch_up: root.change_min_part_score(minPartScoreSlider)
+                Label:
+                    id: scaleFactorLabel
+                    text: '{:.2f}'.format(minPartScoreSlider.value)
+        
+<ShowData>:     
+    BoxLayout:
+        pos_hint : {'x': 0.5, 'y': 0}
+        size_hint_y : 0.8
+        TextInput:
+            id: send_body_json
+

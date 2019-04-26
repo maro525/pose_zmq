@@ -1,0 +1,7 @@
+__pycache__/
+_models/
+*.pyc
+.vscode/
+POSE_ZMQ_ENV/
+.python-version
+
