@@ -16,8 +16,7 @@
 ## 実行
 1. `source POZE_ZMQ_ENV/bin/activate`
 2. `python main.py` (最初の実行はモデルをインストールするため、時間かかる)
-終わるときは
-3. `deactivate`
+3. 終わるときは`deactivate`
 
 ## GUI
 ![GUI](screen.png)
