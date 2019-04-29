@@ -63,8 +63,8 @@ class Detector():
             values = []
 
             for _i in range(17):
-                values.append(pos[_i][0])
                 values.append(pos[_i][1])
+                values.append(pos[_i][0])
                 values.append(score[_i])
 
             value["joints"] = values
